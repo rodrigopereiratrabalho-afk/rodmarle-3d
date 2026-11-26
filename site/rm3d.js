@@ -1,78 +1,20 @@
-<data><xpath expr="//section[@id='product_detail']" position="after"><t t-if="product.id in @@IDS@@"><section id="rm3d" style="display:none" t-att-data-pid="product.id">
-  <style>
-    .rfp-ref-main.rm3d-on{position:relative}
-    .rfp-ref-main.rm3d-on > img{visibility:hidden}
-    .rm3d-stage{position:absolute;inset:0;z-index:2;background:linear-gradient(#fff,#f4f7f8);border-radius:inherit;overflow:hidden;font-family:inherit}
-    .rm3d-stage model-viewer.rm3d-main{display:block;width:100%;height:100%;--poster-color:transparent;--progress-bar-color:#117793;background:transparent}
-    .rm3d-stage model-viewer.rm3d-arv{position:absolute;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none}
-    .rm3d-badge{position:absolute;left:12px;top:12px;z-index:3;background:#0B3039;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;border-radius:20px;padding:5px 10px}
-    .rm3d-hint{position:absolute;left:12px;bottom:12px;z-index:3;font-size:11px;color:#5f6b70;background:rgba(255,255,255,.92);border:1px solid #e3e8ea;border-radius:20px;padding:4px 10px;pointer-events:none}
-    .rm3d-reset{position:absolute;right:12px;top:12px;z-index:3;width:32px;height:32px;border-radius:50%;border:1px solid #e3e8ea;background:#fff;color:#0B3039;font-size:16px;line-height:1;cursor:pointer}
-    .rm3d-ar{position:absolute;right:12px;bottom:12px;z-index:3;cursor:pointer;background:#0B3039;color:#fff;border:0;border-radius:20px;padding:6px 12px;font-weight:700;font-size:12px}
-    .rm3d-warn{position:absolute;inset:0;z-index:8;background:rgba(11,48,57,.55);display:flex;align-items:center;justify-content:center;padding:16px}
-    .rm3d-warn[hidden]{display:none}
-    .rm3d-warn-box{background:#fff;border-radius:8px;max-width:250px;padding:12px 14px;color:#0B3039;box-shadow:0 8px 30px rgba(0,0,0,.25);text-align:left}
-    .rm3d-warn-box b{display:block;font-size:14px;margin-bottom:5px}
-    .rm3d-warn-box p{font-size:12px;line-height:1.4;margin:0 0 6px}
-    .rm3d-warn-box p.s{font-size:11px;color:#5f6b70}
-    .rm3d-warn-ok{display:block;width:100%;margin-top:4px;border:0;border-radius:20px;background:#0B3039;color:#fff;font-weight:700;font-size:13px;padding:7px;cursor:pointer;font-family:inherit}
-    .rm3d-stage .hs{display:flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;cursor:pointer;font-family:inherit}
-    .rm3d-stage .hs .d{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:#117793;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,48,57,.35)}
-    .rm3d-stage .hs.on .d{background:#0B3039;transform:scale(1.15)}
-    .rm3d-stage model-viewer.rm3d-nob .hs{display:none}
-    .rm3d-tools{position:absolute;left:12px;top:48px;z-index:3;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
-    .rm3d-tools button{border:1px solid #0B3039;background:rgba(255,255,255,.95);color:#0B3039;border-radius:20px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
-    .rm3d-tools button.on{background:#0B3039;color:#fff}
-    .rfp-ref-gallery .rfp-conceptual-note,#rodmarle-conceptual-disclosure,.rfp-conceptual-disclosure{display:none!important}
-    .rm3d-notes{margin:12px 0 0;border-left:3px solid #0B3039;background:#eef4f5;border-radius:0 4px 4px 0;padding:6px}
-    .rm3d-notes .r{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;padding:7px 8px;border-radius:4px;cursor:pointer;color:#0B3039}
-    .rm3d-notes .r:hover,.rm3d-notes .r.on{background:#e1ecee}
-    .rm3d-notes .n{width:22px;height:22px;border-radius:50%;background:#117793;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
-    .rm3d-notes .r.on .n{background:#0B3039}
-    .rm3d-notes b{display:block;font-size:13px;line-height:1.3}
-    .rm3d-notes span.t{display:block;font-size:12px;color:#5f6b70;line-height:1.4}
-    .rm3d-mont .rm3d-mv2{display:block;width:100%;height:340px;background:linear-gradient(#fff,#f4f7f8);border:1px solid #e3e8ea;border-radius:6px;--poster-color:transparent;--progress-bar-color:#117793}
-    .rm3d-steps{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-    .rm3d-steps li{border:1px solid #d7e3e6;border-radius:6px;padding:8px;cursor:pointer;font-size:12px;line-height:1.3;color:#0B3039;background:#fff}
-    .rm3d-steps li b{display:block;font-size:11px;color:#117793;margin-bottom:2px}
-    .rm3d-steps li.on{border-color:#0B3039;background:#eef4f5}
-    .rm3d-replay{margin-top:10px;border:1px solid #0B3039;background:#fff;color:#0B3039;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:700;cursor:pointer}
-    .rm3d-req{margin:12px 0 0;border-left:3px solid #0B3039;background:#eef4f5;border-radius:0 4px 4px 0;padding:10px 12px;color:#0B3039;font-size:12px;line-height:1.45}.rm3d-req b{display:block;font-size:13px;margin-bottom:4px}.rm3d-req span{display:block;margin-top:3px}
-    .rm3d-mont-note{font-size:12px;color:#5f6b70;margin:10px 0 0}
-    @media (max-width:600px){.rm3d-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.rm3d-mont .rm3d-mv2{height:260px}}
-  </style>
-  <div class="rm3d-stage">
-    <span class="rm3d-badge">3D</span>
-    <button type="button" class="rm3d-reset" title="Repor vista" aria-label="Repor vista">↺</button>
-    <model-viewer class="rm3d-main" camera-controls="" touch-action="pan-y" auto-rotate="" auto-rotate-delay="3000" rotation-per-second="15deg" interaction-prompt="none" shadow-intensity="0.9" shadow-softness="0.8" exposure="1.05" environment-image="neutral" min-camera-orbit="auto 10deg auto" max-camera-orbit="auto 95deg auto" field-of-view="20deg">
-      <div class="rm3d-tools"><button type="button" class="on" data-g="b">Produto</button><button type="button" data-g="d">Dimensões</button><button type="button" data-g="m">Fixação</button></div>
-    </model-viewer>
-    <model-viewer class="rm3d-arv" loading="eager" ar="" ar-scale="fixed" ar-placement="floor" ar-modes="scene-viewer quick-look webxr"><span slot="ar-button" style="display:none"></span></model-viewer>
-    <button type="button" class="rm3d-ar" style="display:none">Ver no seu espaço (tamanho real)</button>
-    <div class="rm3d-warn" hidden=""><div class="rm3d-warn-box"><b>Atenção às medidas</b><p>Pode haver um erro de 1 a 2 cm em todas as medidas. Confirme sempre com fita métrica.</p><p class="s">Aponte o telemóvel para o chão, com boa luz, e mexa-o devagar.</p><button type="button" class="rm3d-warn-ok">OK</button></div></div>
-    <div class="rm3d-hint">Arraste para rodar · toque nos números</div>
-  </div>
-  <div class="rm3d-notes"></div>
-  <details class="rfp-extra-info rm3d-mont"><summary>Como se fixa<span class="rfp-extra-info-toggle" aria-hidden="true">+</span></summary><div class="rfp-extra-info-content">
-    <model-viewer class="rm3d-mv2" camera-controls="" touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.8" exposure="1.05" environment-image="neutral" field-of-view="22deg" min-camera-orbit="auto 10deg 0.4m" max-camera-orbit="auto 95deg auto"></model-viewer>
-    <ol class="rm3d-steps"></ol>
-    <button type="button" class="rm3d-replay">↺ Ver de novo</button>
-    <div class="rm3d-req"></div>
-    <p class="rm3d-mont-note">Toque num passo para o ver.</p>
-  </div></details>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <script>
-    (function(){
+/* RODMARLE - visualizador 3D e RA na ficha de produto (modelo do Banco 8A). Config por produto em site/cfg/<id>.json */
+(function(){var MARKUP="<div class=\"rm3d-stage\">\n    <span class=\"rm3d-badge\">3D</span>\n    <button type=\"button\" class=\"rm3d-reset\" title=\"Repor vista\" aria-label=\"Repor vista\">↺</button>\n    <model-viewer class=\"rm3d-main\" camera-controls=\"\" touch-action=\"pan-y\" auto-rotate=\"\" auto-rotate-delay=\"3000\" rotation-per-second=\"15deg\" interaction-prompt=\"none\" shadow-intensity=\"0.9\" shadow-softness=\"0.8\" exposure=\"1.05\" environment-image=\"neutral\" min-camera-orbit=\"auto 10deg auto\" max-camera-orbit=\"auto 95deg auto\" field-of-view=\"20deg\">\n      <div class=\"rm3d-tools\"><button type=\"button\" class=\"on\" data-g=\"b\">Produto</button><button type=\"button\" data-g=\"d\">Dimensões</button><button type=\"button\" data-g=\"m\">Fixação</button></div>\n    </model-viewer>\n    <model-viewer class=\"rm3d-arv\" loading=\"eager\" ar=\"\" ar-scale=\"fixed\" ar-placement=\"floor\" ar-modes=\"scene-viewer quick-look webxr\"><span slot=\"ar-button\" style=\"display:none\"></span></model-viewer>\n    <button type=\"button\" class=\"rm3d-ar\" style=\"display:none\">Ver no seu espaço (tamanho real)</button>\n    <div class=\"rm3d-warn\" hidden=\"\"><div class=\"rm3d-warn-box\"><b>Atenção às medidas</b><p>Pode haver um erro de 1 a 2 cm em todas as medidas. Confirme sempre com fita métrica.</p><p class=\"s\">Aponte o telemóvel para o chão, com boa luz, e mexa-o devagar.</p><button type=\"button\" class=\"rm3d-warn-ok\">OK</button></div></div>\n    <div class=\"rm3d-hint\">Arraste para rodar · toque nos números</div>\n  </div>\n  <div class=\"rm3d-notes\"></div>\n  <details class=\"rfp-extra-info rm3d-mont\"><summary>Como se fixa<span class=\"rfp-extra-info-toggle\" aria-hidden=\"true\">+</span></summary><div class=\"rfp-extra-info-content\">\n    <model-viewer class=\"rm3d-mv2\" camera-controls=\"\" touch-action=\"pan-y\" interaction-prompt=\"none\" shadow-intensity=\"0.8\" exposure=\"1.05\" environment-image=\"neutral\" field-of-view=\"22deg\" min-camera-orbit=\"auto 10deg 0.4m\" max-camera-orbit=\"auto 95deg auto\"></model-viewer>\n    <ol class=\"rm3d-steps\"></ol>\n    <button type=\"button\" class=\"rm3d-replay\">↺ Ver de novo</button>\n    <div class=\"rm3d-req\"></div>\n    <p class=\"rm3d-mont-note\">Toque num passo para o ver.</p>\n  </div></details>";
+
       var holder=document.getElementById('rm3d'); if(!holder){return;}
-      var CR='https://cdn.jsdelivr.net/gh/rodrigopereiratrabalho-afk/rodmarle-3d@main/', RR='https://raw.githubusercontent.com/rodrigopereiratrabalho-afk/rodmarle-3d/main/';
+      var me=document.currentScript, CR=me.src.replace(/site\/rm3d\.js.*$/,'');
+      var ver=(CR.match(/rodmarle-3d@([^/]+)\//)||[0,'main'])[1], RR='https://raw.githubusercontent.com/rodrigopereiratrabalho-afk/rodmarle-3d/'+ver+'/';
       var CDN=CR+'glb/', RAW=RR+'glb/', cf='site/cfg/'+holder.getAttribute('data-pid')+'.json';
+      var lk=document.createElement('link'); lk.rel='stylesheet'; lk.href=CR+'site/rm3d.css'; document.head.appendChild(lk);
+      if(!customElements.get('model-viewer')){var sm=document.createElement('script'); sm.type='module'; sm.src='https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js'; document.head.appendChild(sm);}
+      holder.innerHTML=MARKUP;
       function getJ(u){return fetch(u).then(function(r){if(!r.ok){throw new Error(u);}return r.json();});}
-      getJ(CR+cf).catch(function(){return getJ(RR+cf);}).then(init);
+      Promise.all([getJ(CR+cf).catch(function(){return getJ(RR+cf);}), customElements.whenDefined('model-viewer')]).then(function(x){init(x[0]);});
       function init(C){
       var stage=holder.querySelector('.rm3d-stage'), mv=stage.querySelector('model-viewer.rm3d-main'), mvAR=stage.querySelector('model-viewer.rm3d-arv');
       var notes=holder.querySelector('.rm3d-notes'), mont=holder.querySelector('.rm3d-mont'), mv2=mont.querySelector('model-viewer'), stepsBox=mont.querySelector('.rm3d-steps'), reqBox=mont.querySelector('.rm3d-req');
       function el(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt){e.textContent=txt;}return e;}
-      function setSrc(v,file){var tried=false;v.addEventListener('error',function(){if(!tried){tried=true;v.src=RAW+file;}});v.src=CDN+file;}
+      function setSrc(v,file){var tried=false;v.addEventListener('error',function(){if(!tried){tried=true;v.setAttribute('src',RAW+file);}});v.setAttribute('src',CDN+file);}
       mv.setAttribute('alt','Modelo 3D '+C.name+' RODMARLE'); mv.setAttribute('camera-orbit',C.orbit); mv.setAttribute('camera-target',C.target);
       mv2.setAttribute('alt','Fixação '+C.name); mv2.setAttribute('camera-orbit',C.orbit); mv2.setAttribute('camera-target',C.target);
       mvAR.setAttribute('alt','Modelo 3D '+C.name+' RODMARLE');
@@ -199,5 +141,3 @@
       });
       }
     })();
-  </script>
-</section></t></xpath></data>
