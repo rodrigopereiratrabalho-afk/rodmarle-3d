@@ -73,10 +73,12 @@
       /* vista principal */
       setSrc(mv,C.file+'.glb');
       /* se a galeria do Odoo mexer no DOM a meio do carregamento, o model-viewer fica parado: volta a pedir */
-      var kicks=0, kt=setInterval(function(){
-        [mv,mvAR].forEach(function(v){if(!v.loaded){var s=v.getAttribute('src'); if(s){v.removeAttribute('src'); setTimeout(function(){v.setAttribute('src',s);},30);}}});
-        kicks+=1; if(kicks===6){clearInterval(kt);} if(mv.loaded){if(mvAR.loaded){clearInterval(kt);}}
-      },4000);
+      var kicks=0, lastP={}, kt;
+      [mv,mvAR].forEach(function(v,i){lastP[i]=Date.now(); v.addEventListener('progress',function(){lastP[i]=Date.now();});});
+      kt=setInterval(function(){
+        [mv,mvAR].forEach(function(v,i){if(!v.loaded){if(Date.now()-lastP[i] > 3500){var s=v.getAttribute('src'); if(s){lastP[i]=Date.now(); kicks+=1; v.removeAttribute('src'); setTimeout(function(){v.setAttribute('src',s);},30);}}}});
+        if(kicks > 8){clearInterval(kt);} if(mv.loaded){if(mvAR.loaded){clearInterval(kt);}}
+      },1000);
       var home={orbit:C.orbit,target:C.target};
       function pick(i){
         hs.forEach(function(e){e.classList.toggle('on',e.getAttribute('data-i')===i);});
