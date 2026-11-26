@@ -1,0 +1,86 @@
+[
+{
+"id": 54,
+"parts": "14789,14790,14791,14792,14793,14794,14795,14796,14797,14798",
+"gz": "0",
+"name": "Conjunto 1A",
+"orbit": "-30deg 68deg 7.4m",
+"target": "0m 0.38m 0m",
+"lines": [
+"Fixação chumbada em betão",
+"Os 4 perfis de chumbar (100 x 50 x 400 mm) ficam enterrados 400 mm em betão, um em cada pé.",
+"Covas de 30 x 30 cm com 40 cm de fundo.",
+"Carregue em Fixação no 3D para ver as covas e as medidas."
+],
+"fp": "-0.75 -0.7 -0.615 -0.515;0.7 0.75 -0.615 -0.515;-0.75 -0.7 0.515 0.615;0.7 0.75 0.515 0.615",
+"mode": "c"
+},
+{
+"id": 84,
+"parts": "14811,14812,14813,14814,14815,14816",
+"gz": "1",
+"name": "Conjunto 4A",
+"orbit": "-30deg 68deg 7.6m",
+"target": "0m 0.35m 0m",
+"lines": [
+"Fixação chumbada em betão",
+"Os 6 perfis de chumbar (100 x 50 x 400 mm) aparafusam-se por dentro de cada apoio e ficam enterrados 400 mm em betão.",
+"Covas de 30 x 30 cm com 40 cm de fundo.",
+"Carregue em Fixação no 3D para ver as covas e as medidas."
+],
+"fp": "-0.675 -0.625 -0.05 0.05;-0.675 -0.625 -0.84 -0.74;-0.675 -0.625 0.74 0.84;0.625 0.675 -0.05 0.05;0.625 0.675 -0.84 -0.74;0.625 0.675 0.74 0.84",
+"mode": "c"
+},
+{
+"id": 17,
+"parts": "14805,14806,14807,14808,14809,14810",
+"gz": "1",
+"name": "Pérgula 4.1.1A",
+"orbit": "-30deg 72deg 15.5m",
+"target": "0m 1.25m 0m",
+"lines": [
+"Fixação chumbada em betão",
+"Os 4 pilares (100 x 100 mm) ficam enterrados 400 mm em betão.",
+"Covas de 30 x 30 cm com 40 cm de fundo.",
+"Carregue em Fixação no 3D para ver as covas e as medidas."
+],
+"fp": "-1.3 -1.2 -1.35 -1.25;1.2 1.3 -1.35 -1.25;-1.3 -1.2 1.25 1.35;1.2 1.3 1.25 1.35",
+"mode": "c"
+},
+{
+"id": 81,
+"parts": "94100,94101,94102,94103,94104,94105",
+"gz": "1",
+"name": "Conjunto 3A",
+"orbit": "-30deg 68deg 7.4m",
+"target": "0m 0.38m 0m",
+"lines": [
+"Fixação com bucha segmentada em base de betão",
+"A mesa e os 2 bancos têm cantoneiras em inox nos pés, já furadas: 3 furos em cada pé da mesa e 2 em cada pé dos bancos (14 no total).",
+"Cada pé assenta numa base de betão com 30 cm de espessura: 30 x 90 cm na mesa e 30 x 45 cm nos bancos.",
+"Fixa-se com bucha segmentada M10 x 90 (furo de 12 mm no betão).",
+"Carregue em Fixação no 3D para ver as bases e as buchas."
+],
+"fp": "-0.87 -0.57 -0.45 0.45;0.57 0.87 -0.45 0.45;-0.87 -0.57 0.54 0.99;0.57 0.87 0.54 0.99;-0.87 -0.57 -0.99 -0.54;0.57 0.87 -0.99 -0.54",
+"mode": "b",
+"holes": "-0.675 0.325;-0.675 0;-0.675 -0.325;0.675 0.325;0.675 0;0.675 -0.325;-0.675 0.656;-0.675 0.876;0.675 0.656;0.675 0.876;-0.675 -0.656;-0.675 -0.876;0.675 -0.656;0.675 -0.876"
+},
+{
+"id": 189,
+"parts": "95100,95101,95102",
+"gz": "1",
+"name": "Banco 14A",
+"orbit": "-30deg 68deg 9m",
+"target": "0m 0.25m 0m",
+"lines": [
+"Fixação com bucha segmentada em base de betão",
+"Os 3 apoios em aço têm uma chapa de 120 x 150 mm com 4 furos de 10 mm.",
+"Cada apoio assenta numa base de betão de 40 x 40 cm com 30 cm de espessura.",
+"Fixa-se com 4 buchas segmentadas M8 por apoio (12 no total).",
+"Carregue em Fixação no 3D para ver as bases e as buchas."
+],
+"fp": "0.92 1.32 -0.3675 0.0325;-0.2 0.2 -0.3675 0.0325;-1.32 -0.92 -0.3675 0.0325",
+"mode": "b",
+"holes": "1.08 -0.1125;1.08 -0.2225;1.16 -0.1125;1.16 -0.2225;-0.04 -0.1125;-0.04 -0.2225;0.04 -0.1125;0.04 -0.2225;-1.16 -0.1125;-1.16 -0.2225;-1.08 -0.1125;-1.08 -0.2225"
+}
+]

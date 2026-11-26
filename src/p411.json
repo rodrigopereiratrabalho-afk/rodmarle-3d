@@ -1,0 +1,5 @@
+{"src":"/mnt/user-data/uploads/rodmarle_renders/pergula-411a-ar.json","out":"p411-ar.glb","up":[2,1],"x":[0,1],"z":[1,1],
+ "ground":716,"center":[-970,1586],"W":3000,"D":3000,"H":2670,"ls":1.6,
+ "footprints":[[-1300,-1200,-1350,-1250],[1200,1300,-1350,-1250],[-1300,-1200,1250,1350],[1200,1300,1250,1350]],
+ "fix_x":[1300,1200],"fix_z":[1350,1250],
+ "labels":{"xin":"2400 mm entre pilares","xout":"2600 mm fora a fora","zin":"2500 mm entre pilares","zout":"2700 mm fora a fora","note":"4 pilares 100 x 100 mm, enterrados 400 mm"}}

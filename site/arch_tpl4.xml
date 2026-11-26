@@ -1,0 +1,124 @@
+<data><xpath expr="//section[@id='product_detail']" position="after"><t t-if="product.id in @@IDS@@"><t t-set="rmc" t-value="@@RMC@@[product.id]"/><section id="rm3d" style="display:none">
+  <style>
+    .rfp-ref-main.rm3d-on{position:relative}
+    .rfp-ref-main.rm3d-on > img{visibility:hidden}
+    .rm3d-stage{position:absolute;inset:0;z-index:2;background:linear-gradient(#fff,#f4f7f8);border-radius:inherit;overflow:hidden;font-family:inherit}
+    .rm3d-stage model-viewer{display:block;width:100%;height:100%;--poster-color:transparent;--progress-bar-color:#117793;background:transparent}
+    .rm3d-badge{position:absolute;left:12px;top:12px;z-index:3;background:#0B3039;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;border-radius:20px;padding:5px 10px}
+    .rm3d-hint{position:absolute;left:12px;bottom:12px;z-index:3;font-size:11px;color:#5f6b70;background:rgba(255,255,255,.92);border:1px solid #e3e8ea;border-radius:20px;padding:4px 10px;pointer-events:none}
+    .rm3d-reset{position:absolute;right:12px;top:12px;z-index:3;width:32px;height:32px;border-radius:50%;border:1px solid #e3e8ea;background:#fff;color:#0B3039;font-size:16px;line-height:1;cursor:pointer}
+    .rm3d-ar{position:absolute;right:12px;bottom:12px;background:#0B3039;color:#fff;border:0;border-radius:20px;padding:6px 12px;font-weight:700;font-size:12px}
+    .rm3d-ar{z-index:3;cursor:pointer}
+    .rm3d-warn{position:absolute;inset:0;z-index:8;background:rgba(11,48,57,.55);display:flex;align-items:center;justify-content:center;padding:16px}
+    .rm3d-warn[hidden]{display:none}
+    .rm3d-warn-box{background:#fff;border-radius:8px;max-width:250px;padding:12px 14px 12px;color:#0B3039;box-shadow:0 8px 30px rgba(0,0,0,.25);text-align:left}
+    .rm3d-warn-box b{display:block;font-size:14px;margin-bottom:5px}
+    .rm3d-warn-box p{font-size:12px;line-height:1.4;margin:0 0 6px}
+    .rm3d-warn-box p.s{font-size:11px;color:#5f6b70}
+    .rm3d-warn-ok{display:block;width:100%;margin-top:4px;border:0;border-radius:20px;background:#0B3039;color:#fff;font-weight:700;font-size:13px;padding:7px;cursor:pointer;font-family:inherit}
+        .rm3d-tools{position:absolute;left:12px;top:48px;z-index:3;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+    .rm3d-tools button{border:1px solid #0B3039;background:rgba(255,255,255,.95);color:#0B3039;border-radius:20px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+    .rm3d-tools button.on{background:#0B3039;color:#fff}
+    model-viewer.rm3d-inar .rm3d-tools{top:auto;bottom:90px;left:16px}
+    model-viewer.rm3d-inar .rm3d-tools button{font-size:15px;padding:9px 16px}
+    .rm3d-req{margin:4px 0 0;border-left:3px solid #0B3039;background:#eef4f5;border-radius:0 4px 4px 0;padding:10px 12px;color:#0B3039;font-size:13px;line-height:1.5}.rm3d-req b{display:block;font-size:14px;margin-bottom:4px}.rm3d-req span{display:block;margin-top:4px}
+    .rfp-ref-gallery .rfp-conceptual-note,#rodmarle-conceptual-disclosure,.rfp-conceptual-disclosure{display:none!important}
+  </style>
+  <div class="rm3d-stage">
+    <span class="rm3d-badge">3D</span>
+    <button type="button" class="rm3d-reset" title="Repor vista" aria-label="Repor vista">↺</button>
+    <model-viewer t-att-data-parts="rmc[0]" t-att-data-gz="rmc[1]" t-att-data-fp="rmc[6]" t-att-data-fx="rmc[7]" t-att-data-holes="rmc[8]" t-att-alt="'Modelo 3D ' + rmc[2] + ' RODMARLE'" camera-controls="" touch-action="pan-y" auto-rotate="" auto-rotate-delay="3000" rotation-per-second="15deg" interaction-prompt="none" shadow-intensity="0.9" shadow-softness="0.8" exposure="1.05" environment-image="neutral" t-att-camera-orbit="rmc[3]" min-camera-orbit="auto 10deg auto" max-camera-orbit="auto 95deg auto" field-of-view="20deg" t-att-camera-target="rmc[4]" ar="" ar-scale="fixed" ar-modes="webxr scene-viewer quick-look">
+      <div class="rm3d-tools"><button type="button" class="on" data-g="b">Produto</button><button type="button" data-g="d">Dimensões</button><button type="button" data-g="m">Fixação</button></div>
+      <span slot="ar-button" style="display:none"></span>
+    </model-viewer>
+    <button type="button" class="rm3d-ar" style="display:none">Ver no seu espaço (tamanho real)</button>
+    <div class="rm3d-warn" hidden=""><div class="rm3d-warn-box"><b>Atenção às medidas</b><p>Pode haver um erro de 1 a 2 cm em todas as medidas. Confirme sempre com fita métrica.</p><p class="s">Aponte o telemóvel para o chão, com boa luz, e mexa-o devagar.</p><button type="button" class="rm3d-warn-ok">OK</button></div></div>
+    <div class="rm3d-hint">Arraste para rodar</div>
+  </div>
+  <details class="rfp-extra-info rm3d-mont"><summary>Como se fixa<span class="rfp-extra-info-toggle" aria-hidden="true">+</span></summary><div class="rfp-extra-info-content"><div class="rm3d-req"><b t-esc="rmc[5][0]"/><t t-foreach="rmc[5][1:]" t-as="ln"><span t-esc="ln"/></t></div></div></details>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script>
+    (function(){
+      var holder=document.getElementById('rm3d'); if(!holder){return;}
+      var stage=holder.querySelector('.rm3d-stage');
+      var mv=stage.querySelector('model-viewer');
+      var mont=holder.querySelector('.rm3d-mont');
+      var tries=0;
+      (function place(){
+        var main=document.querySelector('.rfp-ref-main');
+        if(main){if(stage.parentNode!==main){main.classList.add('rm3d-on');main.appendChild(stage);}}
+        var firstInfo=document.querySelector('.rfp-ref-shell .rfp-extra-info:not(.rm3d-mont)'), tech=document.querySelector('.rfp-ref-shell .rfp-tech-access');
+        if(mont.parentNode===holder){if(firstInfo){firstInfo.parentNode.insertBefore(mont,firstInfo);}else{if(tech){tech.insertAdjacentElement('afterend',mont);}}}
+        tries+=1; if(tries!==120){setTimeout(place,250);}
+      })();
+      var parts=(mv.getAttribute('data-parts')||'').split(','), gz=mv.getAttribute('data-gz')==='1';
+      Promise.all(parts.map(function(id){return fetch('/web/content/'+id).then(function(r){return r.arrayBuffer();});}))
+        .then(function(bufs){
+          var blob=new Blob(bufs);
+          if(gz){return new Response(blob.stream().pipeThrough(new DecompressionStream('gzip'))).blob();}
+          return blob;
+        })
+        .then(function(b){mv.src=URL.createObjectURL(new Blob([b],{type:'model/gltf-binary'}));});
+      stage.addEventListener('click',function(ev){ev.stopPropagation();});
+      var home={orbit:mv.getAttribute('camera-orbit'),target:mv.getAttribute('camera-target')};
+      stage.querySelector('.rm3d-reset').addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();
+        mv.cameraTarget=home.target;mv.cameraOrbit=home.orbit;mv.autoRotate=true;});
+      var arBtn=stage.querySelector('.rm3d-ar'), warn=stage.querySelector('.rm3d-warn');
+      function arCheck(){if(mv.canActivateAR){arBtn.style.display='';}}
+      mv.addEventListener('load',arCheck); setTimeout(arCheck,2000);
+      arBtn.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();warn.hidden=false;});
+      warn.querySelector('.rm3d-warn-ok').addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();warn.hidden=true;inAR=true;applyTools();mv.activateAR();});
+      var tools=stage.querySelectorAll('.rm3d-tools button');
+      function setGroup(name,on){
+        var sym=Object.getOwnPropertySymbols(mv).find(function(x){return x.description==='scene';});
+        var sc=sym ? mv[sym] : null; var o=sc ? sc.getObjectByName(name) : null;
+        if(o){o.visible=!!on;if(sc.updateShadow){sc.updateShadow();}sc.queueRender();}
+      }
+      function isOn(k){return stage.querySelector('.rm3d-tools button[data-g="'+k+'"]').classList.contains('on');}
+      function applyTools(){var b=isOn('b'), d=isOn('d'), m=isOn('m');
+        setGroup('Banco',b); setGroup('Cotas',d ? b : false); setGroup('Macicos',m); setGroup('CotasMacicos',d ? m : false); setGroup('Enterrado',inAR ? false : m);}
+
+      function buildBuried(sc){
+        if(sc.getObjectByName('Enterrado')){return;}
+        var fp=(mv.getAttribute('data-fp')||'').split(';').filter(function(x){return x;}).map(function(x){return x.split(' ').map(Number);});
+        var ban=sc.getObjectByName('Banco'), mac=sc.getObjectByName('Macicos'); if(!ban){return;} if(!mac){return;}
+        var src=null; ban.traverse(function(o){if(!src){if(o.isMesh){src=o;}}}); if(!src){return;}
+        var GeoC=src.geometry.constructor, AttC=src.geometry.attributes.position.constructor, MeshC=src.constructor;
+        function boxes(list){
+          var P=[],N=[],I=[];
+          list.forEach(function(b){
+            var x0=b[0],x1=b[1],y0=b[2],y1=b[3],z0=b[4],z1=b[5];
+            [[[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[x1,y0,z1],[1,0,0]],[[x0,y0,z1],[x0,y1,z1],[x0,y1,z0],[x0,y0,z0],[-1,0,0]],
+             [[x0,y1,z0],[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[0,1,0]],[[x0,y0,z1],[x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[0,-1,0]],
+             [[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],[0,0,1]],[[x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0],[0,0,-1]]].forEach(function(f){
+              var n=P.length/3; [0,1,2,3].forEach(function(i){P.push(f[i][0],f[i][1],f[i][2]);N.push(f[4][0],f[4][1],f[4][2]);});
+              I.push(n,n+1,n+2,n,n+2,n+3);});
+          });
+          var g=new GeoC(); g.setAttribute('position',new AttC(new Float32Array(P),3)); g.setAttribute('normal',new AttC(new Float32Array(N),3)); g.setIndex(I); g.computeBoundingBox(); g.computeBoundingSphere(); return g;
+        }
+        var DEP=0.4, CV=0.15, prf=[], cov=[], R=0.006;
+        if(mv.getAttribute('data-fx')==='b'){
+          fp.forEach(function(f){cov.push([f[0],f[1],-0.3,-0.002,f[2],f[3]]);});
+          (mv.getAttribute('data-holes')||'').split(';').filter(function(x){return x;}).forEach(function(x){var h=x.split(' ').map(Number);
+            prf.push([h[0]-R,h[0]+R,-0.09,0.012,h[1]-R,h[1]+R]);});
+        }else{
+        fp.forEach(function(f){var cx=(f[0]+f[1])/2, cz=(f[2]+f[3])/2;
+          prf.push([f[0],f[1],0.01-DEP,0,f[2],f[3]]); cov.push([cx-CV,cx+CV,-DEP,-0.002,cz-CV,cz+CV]);});
+        }
+        var mP=src.material.clone(); var mB=src.material.clone();
+        if(mB.color){mB.color.setRGB(0.55,0.56,0.55);} mB.transparent=true; mB.opacity=0.6; mB.depthWrite=false; if(mB.map){mB.map=null;} mB.needsUpdate=true;
+        var grp=new (mac.constructor)(); grp.name='Enterrado';
+        var a=new MeshC(boxes(prf),mP); a.name='EnPerfil'; var c=new MeshC(boxes(cov),mB); c.name='EnBetao'; c.renderOrder=2;
+        grp.add(a); grp.add(c); grp.visible=false; mac.parent.add(grp);
+      }
+      var inAR=false;
+      mv.addEventListener('load',function(){
+        var sym=Object.getOwnPropertySymbols(mv).find(function(x){return x.description==='scene';});
+        var sc=sym ? mv[sym] : null; if(sc){try{buildBuried(sc);}catch(e){} setGroup('Enterrado',false); if(sc.updateBoundingBox){sc.updateBoundingBox();}}
+        applyTools();
+      });
+      tools.forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();b.classList.toggle('on');applyTools();});});
+      mv.addEventListener('ar-status',function(ev){var st=ev.detail.status;mv.classList.toggle('rm3d-inar',st==='session-started'||st==='object-placed');if(st==='not-presenting'||st==='failed'){inAR=false;applyTools();}});
+    })();
+  </script>
+</section></t></xpath></data>

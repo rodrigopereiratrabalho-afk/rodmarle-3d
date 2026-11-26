@@ -1,0 +1,5 @@
+{"src":"/mnt/user-data/uploads/rodmarle_renders/conjunto-1a-1900-ar.json","out":"c1a-ar.glb","up":[0,-1],"x":[2,1],"z":[1,1],
+ "ground":-595.54,"center":[-210,-544],"W":1900,"D":1790,"H":800,
+ "footprints":[[-750,-700,-615,-515],[700,750,-615,-515],[-750,-700,515,615],[700,750,515,615]],
+ "fix_x":[750,700],"fix_z":[615,515],
+ "labels":{"xin":"1400 mm entre pés","xout":"1500 mm fora a fora","zin":"1030 mm entre pés","zout":"1230 mm fora a fora","note":"4 pés 100 x 50 mm, enterrados 400 mm"}}
