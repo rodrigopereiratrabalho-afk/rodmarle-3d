@@ -72,6 +72,11 @@
       function prep(v){var sc=scn(v); if(sc){try{buildBuried(sc);}catch(e){} vis(sc,'Enterrado',false); if(sc.updateBoundingBox){sc.updateBoundingBox();}} return sc;}
       /* vista principal */
       setSrc(mv,C.file+'.glb');
+      /* se a galeria do Odoo mexer no DOM a meio do carregamento, o model-viewer fica parado: volta a pedir */
+      var kicks=0, kt=setInterval(function(){
+        [mv,mvAR].forEach(function(v){if(!v.loaded){var s=v.getAttribute('src'); if(s){v.removeAttribute('src'); setTimeout(function(){v.setAttribute('src',s);},30);}}});
+        kicks+=1; if(kicks===6){clearInterval(kt);} if(mv.loaded){if(mvAR.loaded){clearInterval(kt);}}
+      },4000);
       var home={orbit:C.orbit,target:C.target};
       function pick(i){
         hs.forEach(function(e){e.classList.toggle('on',e.getAttribute('data-i')===i);});
