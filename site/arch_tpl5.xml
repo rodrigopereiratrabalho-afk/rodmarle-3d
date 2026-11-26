@@ -1,4 +1,4 @@
-<data><xpath expr="//section[@id='product_detail']" position="after"><t t-if="product.id in @@IDS@@"><section id="rm3d" style="display:none" t-att-data-cfg="@@RMC@@[product.id]">
+<data><xpath expr="//section[@id='product_detail']" position="after"><t t-if="product.id in @@IDS@@"><section id="rm3d" style="display:none" t-att-data-pid="product.id">
   <style>
     .rfp-ref-main.rm3d-on{position:relative}
     .rfp-ref-main.rm3d-on > img{visibility:hidden}
@@ -64,8 +64,11 @@
   <script>
     (function(){
       var holder=document.getElementById('rm3d'); if(!holder){return;}
-      var C=JSON.parse(decodeURIComponent(escape(atob(holder.getAttribute('data-cfg')))));
-      var CDN='https://cdn.jsdelivr.net/gh/rodrigopereiratrabalho-afk/rodmarle-3d@main/glb/', RAW='https://raw.githubusercontent.com/rodrigopereiratrabalho-afk/rodmarle-3d/main/glb/';
+      var CR='https://cdn.jsdelivr.net/gh/rodrigopereiratrabalho-afk/rodmarle-3d@main/', RR='https://raw.githubusercontent.com/rodrigopereiratrabalho-afk/rodmarle-3d/main/';
+      var CDN=CR+'glb/', RAW=RR+'glb/', cf='site/cfg/'+holder.getAttribute('data-pid')+'.json';
+      function getJ(u){return fetch(u).then(function(r){if(!r.ok){throw new Error(u);}return r.json();});}
+      getJ(CR+cf).catch(function(){return getJ(RR+cf);}).then(init);
+      function init(C){
       var stage=holder.querySelector('.rm3d-stage'), mv=stage.querySelector('model-viewer.rm3d-main'), mvAR=stage.querySelector('model-viewer.rm3d-arv');
       var notes=holder.querySelector('.rm3d-notes'), mont=holder.querySelector('.rm3d-mont'), mv2=mont.querySelector('model-viewer'), stepsBox=mont.querySelector('.rm3d-steps'), reqBox=mont.querySelector('.rm3d-req');
       function el(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt){e.textContent=txt;}return e;}
@@ -194,6 +197,7 @@
         var grp=opt.closest('.rfp-dynamic-variant-group'); var lab=grp ? grp.querySelector('.rfp-config-label') : null;
         if(lab){if(/fixa/i.test(lab.textContent)){if(!mont.open){mont.open=true;}else{playFrom(0);}mont.scrollIntoView({behavior:'smooth',block:'center'});}}
       });
+      }
     })();
   </script>
 </section></t></xpath></data>

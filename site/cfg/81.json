@@ -1,0 +1,147 @@
+{
+ "file": "conjunto-3a",
+ "name": "Conjunto 3A",
+ "orbit": "-30deg 68deg 7.4m",
+ "target": "0m 0.38m 0m",
+ "mode": "b",
+ "fp": [
+  [
+   -0.87,
+   -0.57,
+   -0.45,
+   0.45
+  ],
+  [
+   0.57,
+   0.87,
+   -0.45,
+   0.45
+  ],
+  [
+   -0.87,
+   -0.57,
+   0.54,
+   0.99
+  ],
+  [
+   0.57,
+   0.87,
+   0.54,
+   0.99
+  ],
+  [
+   -0.87,
+   -0.57,
+   -0.99,
+   -0.54
+  ],
+  [
+   0.57,
+   0.87,
+   -0.99,
+   -0.54
+  ]
+ ],
+ "holes": [
+  [
+   -0.675,
+   0.325
+  ],
+  [
+   -0.675,
+   0
+  ],
+  [
+   -0.675,
+   -0.325
+  ],
+  [
+   0.675,
+   0.325
+  ],
+  [
+   0.675,
+   0
+  ],
+  [
+   0.675,
+   -0.325
+  ],
+  [
+   -0.675,
+   0.656
+  ],
+  [
+   -0.675,
+   0.876
+  ],
+  [
+   0.675,
+   0.656
+  ],
+  [
+   0.675,
+   0.876
+  ],
+  [
+   -0.675,
+   -0.656
+  ],
+  [
+   -0.675,
+   -0.876
+  ],
+  [
+   0.675,
+   -0.656
+  ],
+  [
+   0.675,
+   -0.876
+  ]
+ ],
+ "zoom": [
+  "-0.675m 0.03m 0.325m",
+  "-55deg 58deg 3.6m"
+ ],
+ "hs": [
+  {
+   "p": "0 0.8 0",
+   "o": "-15deg 45deg 6m",
+   "t": "Tampo em plástico 100% reciclado",
+   "d": "Perfis com proteção UV. Não apodrecem, não lascam e não precisam de pintura nem verniz."
+  },
+  {
+   "p": "0.4 0.42 0.76",
+   "o": "20deg 60deg 5.5m",
+   "t": "Dois bancos independentes",
+   "d": "Bancos separados da mesa, para até 4 pessoas no total."
+  },
+  {
+   "p": "0.66 0.06 0.77",
+   "n": "-1 0 0",
+   "o": "-35deg 72deg 4.5m",
+   "t": "Cantoneiras em inox nos pés",
+   "d": "Já furadas, para fixar a mesa e os bancos ao chão com bucha."
+  },
+  {
+   "p": "0.73 0.7 -0.3",
+   "n": "1 0 0",
+   "o": "55deg 75deg 4.8m",
+   "t": "Parafusaria em inox A2",
+   "d": "Fixações em aço inox AISI 304, que não enferrujam."
+  }
+ ],
+ "steps": [
+  "Fazer as bases de betão com 30 cm de espessura",
+  "Furar com broca de 12 mm e colocar as buchas segmentadas M10 x 90",
+  "Pousar o conjunto com os furos das cantoneiras nas buchas",
+  "Colocar anilha e porca e apertar"
+ ],
+ "req": [
+  "O que é preciso",
+  "Uma base de betão com 30 cm de espessura debaixo de cada pé: 30 x 90 cm na mesa e 30 x 45 cm em cada banco.",
+  "14 buchas segmentadas M10 x 90: 3 em cada pé da mesa e 2 em cada pé dos bancos.",
+  "Apertar a porca ao binário indicado pelo fabricante da bucha."
+ ]
+}
