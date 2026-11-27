@@ -136,7 +136,7 @@
   ],
   "steps": [
    "Fazer as bases de betão com 30 cm de espessura",
-   "Furar com broca de 12 mm e colocar as buchas segmentadas M10 x 90",
+   "Furar o betão com a broca indicada e colocar as buchas segmentadas M10 x 90",
    "Pousar o conjunto com os furos das cantoneiras nas buchas",
    "Colocar anilha e porca e apertar"
   ],
@@ -372,6 +372,122 @@
    "4 covas de 30 x 30 cm com 40 cm de fundo, uma em cada pilar.",
    "Betão para encher as covas.",
    "Os pilares (100 x 100 mm) ficam enterrados 40 cm."
+  ]
+ },
+ {
+  "id": 189,
+  "file": "banco-14a",
+  "name": "Banco 14A",
+  "orbit": "-30deg 68deg 9m",
+  "target": "0m 0.25m 0m",
+  "mode": "b",
+  "fp": [
+   [
+    0.92,
+    1.32,
+    -0.3675,
+    0.0325
+   ],
+   [
+    -0.2,
+    0.2,
+    -0.3675,
+    0.0325
+   ],
+   [
+    -1.32,
+    -0.92,
+    -0.3675,
+    0.0325
+   ]
+  ],
+  "holes": [
+   [
+    1.08,
+    -0.1125
+   ],
+   [
+    1.08,
+    -0.2225
+   ],
+   [
+    1.16,
+    -0.1125
+   ],
+   [
+    1.16,
+    -0.2225
+   ],
+   [
+    -0.04,
+    -0.1125
+   ],
+   [
+    -0.04,
+    -0.2225
+   ],
+   [
+    0.04,
+    -0.1125
+   ],
+   [
+    0.04,
+    -0.2225
+   ],
+   [
+    -1.16,
+    -0.1125
+   ],
+   [
+    -1.16,
+    -0.2225
+   ],
+   [
+    -1.08,
+    -0.1125
+   ],
+   [
+    -1.08,
+    -0.2225
+   ]
+  ],
+  "zoom": [
+   "1.12m 0.03m -0.1675m",
+   "35deg 55deg 2.6m"
+  ],
+  "hs": [
+   {
+    "p": "0.6 0.46 0",
+    "o": "-15deg 45deg 6m",
+    "t": "Assento em plástico 100% reciclado",
+    "d": "6 perfis de 100 x 50 mm com 3 m, com proteção UV. Não apodrecem, não lascam e não precisam de pintura nem verniz."
+   },
+   {
+    "p": "1.12 0.2 0.05",
+    "n": "0 0 1",
+    "o": "20deg 75deg 4.5m",
+    "t": "3 apoios em aço",
+    "d": "Cada apoio tem uma chapa de 120 x 150 mm com 4 furos para fixar ao chão."
+   },
+   {
+    "p": "-1.12 0.37 0.1",
+    "n": "0 0 1",
+    "o": "-30deg 70deg 4.5m",
+    "t": "Parafusaria em inox A2",
+    "d": "Fixações em aço inox AISI 304, que não enferrujam."
+   }
+  ],
+  "steps": [
+   "Fazer 3 bases de betão de 40 x 40 cm com 30 cm de espessura",
+   "Furar o betão com a broca indicada e colocar 4 buchas segmentadas M8 por apoio",
+   "Pousar o banco com os furos das chapas nas buchas",
+   "Colocar anilha e porca e apertar"
+  ],
+  "req": [
+   "O que é preciso",
+   "3 bases de betão de 40 x 40 cm com 30 cm de espessura, uma debaixo de cada apoio.",
+   "12 buchas segmentadas M8: 4 em cada chapa (furos de 10 mm em chapa de 8 mm).",
+   "Apertar a porca ao binário indicado pelo fabricante da bucha."
   ]
  }
 ]
